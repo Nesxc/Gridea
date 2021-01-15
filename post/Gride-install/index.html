@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>Gridea博客 + vercel部署超简单超详细部署教程 | Nesxc</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://nesxc.vercel.app/favicon.ico?v=1610680507293">
+<link rel="stylesheet" href="https://nesxc.vercel.app/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="前言:
+如过你是一个电脑小白，但是你也想写博客。但是觉得hexo博客的搭建极其烦人，那么你可以试一试Gridea这款博客程序：
+
+Gridea是什么？
+Gridea 一个静态博客写作客户端。他在windos电脑上以exe程序运行。他打开长这..." />
+    <meta name="keywords" content="Gridea" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://nesxc.vercel.app">
+        <img src="https://nesxc.vercel.app/images/avatar.png?v=1610680507293" class="site-logo">
+        <h1 class="site-title">Nesxc</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      青石落晚巷 故人未还乡
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://www.nesxc.com" target="_blank">Nesxc</a> | <a class="rss" href="https://nesxc.vercel.app/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">Gridea博客 + vercel部署超简单超详细部署教程</h2>
+            <div class="post-date">2021-01-15</div>
+            
+              <div class="feature-container" style="background-image: url('https://cdn.jsdelivr.net/gh/Nesxc/file@master/v2-0d9eb92f67ba93b514f2555a70eacebe_1440w.jpg')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <h3 id="前言">前言:</h3>
+<p>如过你是一个电脑小白，但是你也想写博客。但是觉得hexo博客的搭建极其烦人，那么你可以试一试Gridea这款博客程序：</p>
+<figure data-type="image" tabindex="1"><img src="https://cdn.jsdelivr.net/gh/Nesxc/file@master/image-20210115095332583.png" alt="image-20210115095332583" loading="lazy"></figure>
+<h3 id="gridea是什么">Gridea是什么？</h3>
+<p><strong>Gridea</strong> 一个静态博客写作客户端。他在windos电脑上以exe程序运行。他打开长这个样：</p>
+<figure data-type="image" tabindex="2"><img src="https://cdn.jsdelivr.net/gh/Nesxc/file@master/image-20210115095903014.png" alt="image-20210115095903014" loading="lazy"></figure>
+<p>可以看出这款程序十分的易上手，比hexo对小白来说十分的友好。</p>
+<p>而且它还内置了多款主题，并且集成了gitalk和disqus评论插件。</p>
+<figure data-type="image" tabindex="3"><img src="https://cdn.jsdelivr.net/gh/Nesxc/file@master/image-20210115100245332.png" alt="image-20210115100245332" loading="lazy"></figure>
+<figure data-type="image" tabindex="4"><img src="https://cdn.jsdelivr.net/gh/Nesxc/file@master/image-20210115100306809.png" alt="image-20210115100306809" loading="lazy"></figure>
+<p>而且他还有NexT主题，喜欢这个主题但是不会弄hexo的小伙伴有福了！</p>
+<figure data-type="image" tabindex="5"><img src="https://cdn.jsdelivr.net/gh/Nesxc/file@master/image-20210115100445764.png" alt="image-20210115100445764" loading="lazy"></figure>
+<h3 id="安装gridea">安装Gridea</h3>
+<p>Gridea支持三种部署方式：</p>
+<blockquote>
+<p>Github pages</p>
+<p>coding pages</p>
+<p>SFTP</p>
+</blockquote>
+<figure data-type="image" tabindex="6"><img src="https://cdn.jsdelivr.net/gh/Nesxc/file@master/image-20210115100609542.png" alt="image-20210115100609542" loading="lazy"></figure>
+<p>这次我打算将这个博客部署到Github然后通过<a href="https://vercel.com/">vercel</a>加速国内访问</p>
+<h4 id="一-创建仓库">一、创建仓库</h4>
+<p>首先我们要先去Github<a href="https://github.com/new">创建</a>一个部署Girdea的仓库。</p>
+<figure data-type="image" tabindex="7"><img src="https://cdn.jsdelivr.net/gh/Nesxc/file@master/image-20210115101023769.png" alt="image-20210115101023769" loading="lazy"></figure>
+<p>因为我是通过vercel部署，所以不用加上.github.io。然后仓库一定要选择Public(公开)</p>
+<h4 id="创建token">创建Token</h4>
+<p>因为要通过Gridea的程序上传到Github，所以我们要去创建一个<a href="https://github.com/settings/tokens/new">Token</a>。</p>
+<figure data-type="image" tabindex="8"><img src="https://cdn.jsdelivr.net/gh/Nesxc/file@master/image-20210115101416682.png" alt="image-20210115101416682" loading="lazy"></figure>
+<p>我们这里只勾上<strong>repo</strong>即可。</p>
+<figure data-type="image" tabindex="9"><img src="https://cdn.jsdelivr.net/gh/Nesxc/file@master/image-20210115101528806.png" alt="image-20210115101528806" loading="lazy"></figure>
+<p>注意Token只会在这里显示一次，下一次就不会显示了，所以这里一定要<strong>复制</strong>一下！！！！</p>
+<h4 id="配置gridea">配置Gridea</h4>
+<p>这时我们回到Gridea的远程配置界面，填写相关的信息：</p>
+<figure data-type="image" tabindex="10"><img src="https://cdn.jsdelivr.net/gh/Nesxc/file@master/image-20210115102129401.png" alt="image-20210115102129401" loading="lazy"></figure>
+<p>然后点击远程连接测试，通过了就会显示这个，然后保存即可:</p>
+<figure data-type="image" tabindex="11"><img src="https://cdn.jsdelivr.net/gh/Nesxc/file@master/image-20210115102106654.png" alt="image-20210115102106654" loading="lazy"></figure>
+<h4 id="上传到github">上传到Github</h4>
+<p>这个时候我们点击程序左下角的同步按钮成功了也会提示：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Nesxc/file@master/image-20210115102258791.png" alt="image-20210115102258791" loading="lazy"><img src="https://cdn.jsdelivr.net/gh/Nesxc/file@master/image-20210115102319988.png" alt="image-20210115102319988" loading="lazy"></p>
+<p>然后去仓库看看原文件是否存在。</p>
+<figure data-type="image" tabindex="12"><img src="https://cdn.jsdelivr.net/gh/Nesxc/file@master/image-20210115102415544.png" alt="image-20210115102415544" loading="lazy"></figure>
+<p>可以看到，上传成功了。</p>
+<h4 id="配置vercel">配置vercel</h4>
+<p>上传成功了，但是想要访问还是不行。我们得去配置vercel。我们点击官网上的Start Deploying(开始部署)</p>
+<figure data-type="image" tabindex="13"><img src="https://cdn.jsdelivr.net/gh/Nesxc/file@master/image-20210115102613266.png" alt="image-20210115102613266" loading="lazy"></figure>
+<p>选择Github登录。然后再仪表盘找到你的仓库点击import导入。</p>
+<figure data-type="image" tabindex="14"><img src="https://cdn.jsdelivr.net/gh/Nesxc/file@master/image-20210115102735153.png" alt="image-20210115102735153" loading="lazy"></figure>
+<p>选择个人。</p>
+<figure data-type="image" tabindex="15"><img src="https://cdn.jsdelivr.net/gh/Nesxc/file@master/image-20210115102810657.png" alt="image-20210115102810657" loading="lazy"></figure>
+<p>点击continue。</p>
+<figure data-type="image" tabindex="16"><img src="https://cdn.jsdelivr.net/gh/Nesxc/file@master/image-20210115102848832.png" alt="image-20210115102848832" loading="lazy"></figure>
+<p>然后点击Deploy部署即可。</p>
+<figure data-type="image" tabindex="17"><img src="https://cdn.jsdelivr.net/gh/Nesxc/file@master/image-20210115102946128.png" alt="image-20210115102946128" loading="lazy"></figure>
+<p>部署成功后进入你的网站。你可能会看到这样一幕：</p>
+<figure data-type="image" tabindex="18"><img src="https://cdn.jsdelivr.net/gh/Nesxc/file@master/image-20210115103514569.png" alt="image-20210115103514569" loading="lazy"></figure>
+<p>怎么解决？复制你的网址。然后粘贴到这里：</p>
+<figure data-type="image" tabindex="19"><img src="https://cdn.jsdelivr.net/gh/Nesxc/file@master/image-20210115103607654.png" alt="image-20210115103607654" loading="lazy"></figure>
+<p>然后点击同步，同步到Github之后Vercel会自动重新部署，你只需要一直刷新等待结果即可。</p>
+<figure data-type="image" tabindex="20"><img src="https://cdn.jsdelivr.net/gh/Nesxc/file@master/image-20210115103736449.png" alt="image-20210115103736449" loading="lazy"></figure>
+<blockquote>
+<p>大功告成！</p>
+</blockquote>
+<h3 id="给你的博客添加gitalk评论系统">给你的博客添加Gitalk评论系统</h3>
+<p>1.打开<a href="https://github.com/settings/applications/new">链接。</a></p>
+<figure data-type="image" tabindex="21"><img src="https://cdn.jsdelivr.net/gh/Nesxc/file@master/image-20210113150359282.png" alt="image-20210113150359282" loading="lazy"></figure>
+<blockquote>
+<p>填写完毕点击注册申请</p>
+</blockquote>
+<figure data-type="image" tabindex="22"><img src="https://cdn.jsdelivr.net/gh/Nesxc/file@master/image-20210113150855631.png" alt="image-20210113150855631" loading="lazy"></figure>
+<blockquote>
+<p>成功的界面。</p>
+</blockquote>
+<p>然后把数据往这里面填即可：</p>
+<figure data-type="image" tabindex="23"><img src="https://cdn.jsdelivr.net/gh/Nesxc/file@master/image-20210115104720835.png" alt="image-20210115104720835" loading="lazy"></figure>
+<blockquote>
+<p>Client ID就是上图中的客户编号。</p>
+<p>Client Secret就是上图中的客户机密。</p>
+<p>仓库名称填写你Gridea的仓库名。</p>
+<p>Owner填写你的用户名。</p>
+</blockquote>
+<p>保存同步刷新网页，进入Hello World帖子查看评论。</p>
+<figure data-type="image" tabindex="24"><img src="https://cdn.jsdelivr.net/gh/Nesxc/file@master/image-20210115105257623.png" alt="image-20210115105257623" loading="lazy"></figure>
+<p>成功~</p>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://nesxc.vercel.app/tag/CyC0rQ5_S/" class="tag">
+                    Gridea
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://nesxc.vercel.app/post/hello-gridea/">
+                  <h3 class="post-title">
+                    Hello Gridea
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '0051f43666a16841bd3c',
+        clientSecret: '557a9c4f5c62c6819bebba2f09d2e4142601e964',
+        repo: 'Gridea',
+        owner: 'Nesxc',
+        admin: ['Nesxc'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>
